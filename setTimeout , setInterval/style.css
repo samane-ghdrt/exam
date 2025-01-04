@@ -1,0 +1,11 @@
+#timer {
+    font-size: 2em;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  .running {
+    background-color: lightgreen;
+  }
+  .paused {
+    background-color: lightcoral;
+  }
