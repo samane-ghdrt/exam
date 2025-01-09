@@ -3,9 +3,30 @@ const startButton = document.getElementById('start');
 const stopButton = document.getElementById('stop');
 const resetButton = document.getElementById('reset');
 
+
 let startTime = 0;
 let elapsedTime = 0;
-let timerInterval;
+let timerInterval; 
+
+
+function start() {
+  setInterval(()=>{
+    startTime++;
+    if (startTime<=60) {
+      timerDisplay.textContent=
+    }
+    seconds = (startTime < 61) ? "0" + seconds : seconds;
+    timerDisplay.textContent = formatTime(elapsedTime);
+  },1000)
+}
+
+function timer(time){
+  if (time<=60) {
+    
+  }
+}
+
+
 
 function formatTime(milliseconds) {
   let seconds = Math.floor((milliseconds / 1000) % 60);
@@ -22,8 +43,13 @@ function formatTime(milliseconds) {
 function startTimer() {
   if (!timerInterval) {
     startTime = Date.now() - elapsedTime;
+  console.log(startTime);
+  
+    
     timerInterval = setInterval(() => {
       elapsedTime = Date.now() - startTime;
+      console.log(elapsedTime);
+      
       timerDisplay.textContent = formatTime(elapsedTime);
     }, 10); // Update every 10 milliseconds for better precision
     timerDisplay.classList.add('running');
